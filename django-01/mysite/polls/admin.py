@@ -10,17 +10,23 @@ class ChoiceInline(admin.TabularInline):
 
 @admin.register(Choice)
 class ChoiceAdmin(admin.ModelAdmin):
-    list_filter = ('question__question_text', 'question__pub_date')
     list_display = ('question', 'choice_text', 'votes', )
+    list_filter = ['question']
+
+
 # admin.site.register(Choice, ChoiceAdmin)
 
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
     # fields = ['pub_date', 'question_text']
+    list_display = ('question_text', 'pub_date', 'was_published_recently')
     fieldsets = [
         (None,               {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date']}),
     ]
     inlines = [ChoiceInline]
+
+    list_filter = ['pub_date']
+    search_fields = ['question_text']
 # admin.site.register(Question, QuestionAdmin)
