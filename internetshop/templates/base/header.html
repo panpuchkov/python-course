@@ -29,11 +29,11 @@
                             </div>
                             <div class="header-info-right">
                                 <ul>
-                                    <li><a href="login.html">My Account </a></li>
+                                    <li><a href="{% url "login" %}">My Account </a></li>
                                     <li><a href="product_list.html">Wish List </a></li>
                                     <li><a href="cart.html">Shopping</a></li>
                                     <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{% url 'logout' %}">Checkout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -70,13 +70,13 @@
                                         </li>
                                         <li><a href="#">Pages</a>
                                             <ul class="submenu">
-                                                <li><a href="login.html">Login</a></li>
+                                                <li><a href="{% url 'login' %}">Login</a></li>
                                                 <li><a href="cart.html">Card</a></li>
                                                 <li><a href="elements.html">Element</a></li>
                                                 <li><a href="about.html">About</a></li>
                                                 <li><a href="confirmation.html">Confirmation</a></li>
                                                 <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="checkout.html">Product Checkout</a></li>
+                                                <li><a href="{% url 'logout' %}">Product Checkout</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="{% url 'contacts:index' %}">Contact</a></li>

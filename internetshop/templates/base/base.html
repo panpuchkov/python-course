@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>eCommerce HTML-5 Template</title>
+    <title>{% block title %}eCommerce HTML-5 Template{% endblock %}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
@@ -26,6 +26,7 @@
 
 <body>
 
+{% block "preloader-active" %}
 <!-- Preloader Start -->
 <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
@@ -38,12 +39,13 @@
     </div>
 </div>
 <!-- Preloader Start -->
+{% endblock %}
 
 {% block "header" %}
     {% include "base/header.html" %}
 {% endblock %}
 
-{% block "main" %}{% endblock %}
+{% block "content" %}{% endblock %}
 
 {% block "footer" %}
     {% include "base/footer.html" %}
