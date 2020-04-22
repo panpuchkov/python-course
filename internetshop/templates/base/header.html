@@ -29,11 +29,15 @@
                             </div>
                             <div class="header-info-right">
                                 <ul>
-                                    <li><a href="{% url "login" %}">My Account </a></li>
+                                    {% if user.is_staff %}
+                                    <li><a href="/admin/" target="_blank">My Account </a></li>
+                                    {% else %}
+<!--                                        <li><a href="my_account.html">My Account </a></li> -->
+                                    {% endif %}
                                     <li><a href="product_list.html">Wish List </a></li>
                                     <li><a href="cart.html">Shopping</a></li>
                                     <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="{% url 'logout' %}">Checkout</a></li>
+                                    <li><a href="{% url 'logout' %}?next={{ request.path }}">Checkout</a></li>
                                 </ul>
                             </div>
                         </div>

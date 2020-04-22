@@ -18,7 +18,6 @@ from django.urls import include, path
 from django.shortcuts import redirect
 
 """
-
 """
 
 urlpatterns = [

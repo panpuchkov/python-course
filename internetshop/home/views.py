@@ -14,3 +14,14 @@ def index(request):
 #         published in the future).
 #         """
 #         return ""
+
+
+class ContactsView(generic.ListView):
+    template_name = 'index.html'
+
+    def get_queryset(self):
+        """
+        Return the last five published questions (not including those set to be
+        published in the future).
+        """
+        return ""
