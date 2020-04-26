@@ -31,14 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'home.apps.HomeConfig',
-    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
+    'home.apps.HomeConfig',
+    'contacts.apps.ContactsConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,4 +123,20 @@ STATIC_URL = '/assets/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-# LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+
+# Django registration
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = 'NoReply <noreplay@example.com>'
+
+# Python email Debugging server example:
+# python -m smtpd -c DebuggingServer -n localhost:1025

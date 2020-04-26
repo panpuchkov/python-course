@@ -1,7 +1,9 @@
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
+# from django.contrib.auth.decorators import login_required, permission_required
 
 
+# @login_required()
 def index(request):
     return render(request, 'index.html', {})
 

@@ -30,14 +30,16 @@
                             <div class="header-info-right">
                                 <ul>
                                     {% if user.is_staff %}
-                                    <li><a href="/admin/" target="_blank">My Account </a></li>
+                                        <li><a href="/admin/" target="_blank">My Account </a></li>
                                     {% else %}
-<!--                                        <li><a href="my_account.html">My Account </a></li> -->
+                                        <!--                                        <li><a href="my_account.html">My Account </a></li> -->
                                     {% endif %}
                                     <li><a href="product_list.html">Wish List </a></li>
                                     <li><a href="cart.html">Shopping</a></li>
                                     <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="{% url 'logout' %}?next={{ request.path }}">Checkout</a></li>
+                                    {% if user.is_authenticated %}
+                                        <li><a href="{% url 'logout' %}?next={{ request.path }}">Checkout</a></li>
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
@@ -74,13 +76,17 @@
                                         </li>
                                         <li><a href="#">Pages</a>
                                             <ul class="submenu">
-                                                <li><a href="{% url 'login' %}">Login</a></li>
+                                                {% if user.is_authenticated == False %}
+                                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                                {% endif %}
                                                 <li><a href="cart.html">Card</a></li>
                                                 <li><a href="elements.html">Element</a></li>
                                                 <li><a href="about.html">About</a></li>
                                                 <li><a href="confirmation.html">Confirmation</a></li>
                                                 <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="{% url 'logout' %}">Product Checkout</a></li>
+                                                {% if user.is_authenticated %}
+                                                    <li><a href="{% url 'logout' %}">Checkout</a></li>
+                                                {% endif %}
                                             </ul>
                                         </li>
                                         <li><a href="{% url 'contacts:index' %}">Contact</a></li>
@@ -108,7 +114,9 @@
                                         <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                     </div>
                                 </li>
-                                <li class="d-none d-lg-block"><a href="#" class="btn header-btn">Sign in</a></li>
+                                {% if user.is_authenticated == False %}
+                                    <li class="d-none d-lg-block"><a href="{% url 'django_registration_register' %}" class="btn header-btn">Sign in</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                         <!-- Mobile Menu -->
