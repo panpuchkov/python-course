@@ -4,6 +4,4 @@ To finalize your registration, confirm your email account clicking on the follow
 
 {{ scheme }}://{{ site }}{% url 'django_registration_activate' activation_key=activation_key %}
 
-{{site}}/accounts/activate/{{ activation_key }}/
-
 If you didn't sign up, just ignore this message.

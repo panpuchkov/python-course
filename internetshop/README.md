@@ -21,3 +21,10 @@ https://data-flair.training/blogs/django-send-email/
 Python debugging server
 
 https://prefetch.net/blog/2017/08/17/using-the-python-smtp-debuggingserver-to-test-smtp-communications/
+
+# TODO: add to user migration
+```sql
+create unique index auth_user_email_uindex
+	on auth_user (email);
+```
+
