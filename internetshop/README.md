@@ -28,3 +28,6 @@ create unique index auth_user_email_uindex
 	on auth_user (email);
 ```
 
+## Stage 04 - Registration - Extend User Model
+
+https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html

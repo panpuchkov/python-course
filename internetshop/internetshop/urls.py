@@ -23,6 +23,7 @@ from django.shortcuts import redirect
 urlpatterns = [
     path('accounts/', include('django_registration.backends.activation.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/profile', include('userprofile.urls')),
     path('admin/', admin.site.urls),
     path('contacts/', include('contacts.urls')),
     path('', include('home.urls')),

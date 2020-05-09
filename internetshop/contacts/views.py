@@ -3,7 +3,7 @@ from .models import Contacts
 
 
 class IndexView(generic.ListView):
-    template_name = 'contact.html'
+    template_name = 'contacts.html'
 
     def get_queryset(self):
         """

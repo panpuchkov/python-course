@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'contacts.apps.ContactsConfig',
+    'userprofile.apps.UserprofileConfig'
 ]
 
 MIDDLEWARE = [
@@ -139,4 +140,4 @@ EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = 'NoReply <noreplay@example.com>'
 
 # Python email Debugging server example:
-# python -m smtpd -c DebuggingServer -n localhost:1025
+# python3 -m smtpd -c DebuggingServer -n localhost:1025
