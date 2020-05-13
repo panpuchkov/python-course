@@ -1,8 +1,13 @@
+import logging
 from django.shortcuts import render
 from django.views.generic import View
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
 
 # @login_required()
 # def index(request):
@@ -25,6 +30,13 @@ class ProfileView(View):
 
     @method_decorator(login_required)
     def get(self, request):
+        # print("request %s", request.user)
+        logger.debug("debug: request %s", request.user.id)
+        logger.info("info: request %s", request.user.id)
+        logger.warning("warning: request %s", request.user.id)
+        logger.error("error: request %s", request.user.id)
+        logger.critical("critical: request %s", request.user.id)
+
         return render(request, self.template_name)
 
     @method_decorator(login_required)

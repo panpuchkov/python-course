@@ -31,3 +31,7 @@ create unique index auth_user_email_uindex
 ## Stage 04 - Registration - Extend User Model
 
 https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
+
+## Stage - Logging
+
+https://docs.djangoproject.com/en/3.0/topics/logging/
