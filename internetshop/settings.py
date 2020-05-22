@@ -23,7 +23,7 @@ SECRET_KEY = 'ihz5k9j%_hy*7*u^_&kwuemwg%_#=rb9ql$45z=_onj^iwhxhk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0"]
 
 # Application definition
 
@@ -125,7 +125,7 @@ ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
+EMAIL_HOST = 'mail'
 EMAIL_PORT = 1025
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''

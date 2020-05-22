@@ -1,0 +1,22 @@
+version: "3"
+services:
+  django-app:
+    container_name: django-app
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+     - .:/src
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:10
+    container_name: db
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - "./db-data:/var/lib/postgresql/data"
+  mail:
+    image: python:3.8
+    container_name: mail
+    command: python3 -m smtpd -c DebuggingServer -n 0.0.0.0:1025
