@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.shortcuts import redirect
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 """
 """
@@ -26,5 +28,6 @@ urlpatterns = [
     path('accounts/profile', include('userprofile.urls')),
     path('admin/', admin.site.urls),
     path('contacts/', include('contacts.urls')),
+    path('goods/', include('goods.urls')),
     path('', include('home.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

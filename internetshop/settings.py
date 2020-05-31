@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'contacts.apps.ContactsConfig',
-    'userprofile.apps.UserprofileConfig'
+    'userprofile.apps.UserprofileConfig',
+    'goods.apps.GoodsConfig'
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,10 @@ STATIC_URL = '/assets/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+MEDIA_URL = "/data/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'data')
+
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
@@ -160,3 +165,5 @@ logging.basicConfig(
 #         'level': 'DEBUG',
 #     },
 # }
+
+

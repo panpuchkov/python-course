@@ -1,6 +1,6 @@
 .PHONY: build run bash exec
 
-build: clean
+build:
 	docker build . -t django-app
 
 run:
