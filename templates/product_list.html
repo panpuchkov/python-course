@@ -63,7 +63,7 @@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_product_item">
                                     <img src="{{ goods.productId.image.url }}" alt="" class="img-fluid">
-                                    <h3> <a href="{% url 'goods:details' goods.productId.id %}">{{ goods.productId.name }}</a> </h3>
+                                    <h3> <a href="{% url 'goods:details' goods.id %}">{{ goods.productId.name }}</a> </h3>
                                     <p>{{ goods.price }}</p>
                                 </div>
                             </div>
