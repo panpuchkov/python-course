@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'contacts.apps.ContactsConfig',
     'userprofile.apps.UserprofileConfig',
-    'goods.apps.GoodsConfig'
+    'goods.apps.GoodsConfig',
+    'cart.apps.CartConfig'
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,11 @@ LOGIN_REDIRECT_URL = '/'
 # Django registration
 ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window
 
+# Fixtures
+FIXTURE_DIRS = (
+   '/path/to/myapp/fixtures/',
+)
+
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail'
@@ -139,6 +145,7 @@ DEFAULT_FROM_EMAIL = 'NoReply <noreplay@example.com>'
 
 # Python email Debugging server example:
 # python3 -m smtpd -c DebuggingServer -n localhost:1025
+
 
 
 # Logging
