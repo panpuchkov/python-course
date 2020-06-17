@@ -2,12 +2,14 @@ version: "3"
 services:
   django-app:
     container_name: django-app
-    build: .
+    build: ./shop
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-     - .:/src
+     - ./shop:/src
     ports:
       - "8000:8000"
+    depends_on:
+      - db
   db:
     image: postgres:latest
     container_name: db
