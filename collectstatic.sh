@@ -19,3 +19,9 @@ mv ./shop/assets ./nginx/var/www/web/assets
 # build images
 #docker-compose -f docker-compose-prod.yml build
 #docker-compose -f docker-compose-prod.yml up
+
+# create ssl
+#mkdir -p nginx/ssl
+#pushd nginx/ssl
+#openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout cert.key -out cert.crt
+#popd
