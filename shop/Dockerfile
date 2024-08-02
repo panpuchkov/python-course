@@ -1,5 +1,7 @@
 FROM python:3.8
 
+WORKDIR /app
+
 # install and update required software
 RUN apt-get update \
     && apt-get upgrade -y  --no-install-recommends \
@@ -8,13 +10,12 @@ RUN apt-get update \
     && pip install -U pip
 
 # copy project source code and install project dependencies
-COPY . /src
-RUN pip install -r /src/requirements.txt
+COPY . /app
+RUN pip install -r /app/requirements.txt
 
 # set container working directory
-WORKDIR /src
-
 EXPOSE 8000
 
 # Run django application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["/app/run.sh"]
+#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

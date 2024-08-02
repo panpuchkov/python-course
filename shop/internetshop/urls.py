@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 """
 
 urlpatterns = [
-    path('api/v1/', include('api1.urls')),
+    path('api/v1/', include('api.urls')),
     path('accounts/', include('django_registration.backends.activation.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/profile', include('userprofile.urls')),
